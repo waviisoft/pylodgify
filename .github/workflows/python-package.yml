@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
@@ -19,7 +19,8 @@ jobs:
         include:
           - python-version: "3.6.15"
             os: ubuntu-20.04
-
+          - python-version: "3.12"
+            os: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
