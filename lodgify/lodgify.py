@@ -64,11 +64,14 @@ def to_json_bool(value: bool):
 
 
 class Lodgify:
-    api_key: str
     DEFAULT_HOST = "https://api.lodgify.com"
 
-    def __init__(self, api_key: str):
+    api_key: str
+    host: str
+
+    def __init__(self, api_key: str, host = DEFAULT_HOST):
         self.api_key = api_key
+        self.host = host
 
     def fetch_bookings(
         self,

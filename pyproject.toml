@@ -19,3 +19,9 @@ classifiers = [
 
 [project.urls]
 "Homepage" = "https://github.com/waviisoft/pylodgify"
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+pythonpath = "."
